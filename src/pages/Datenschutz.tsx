@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
+import LanguageToggle from '../components/LanguageToggle';
+import ThemeToggle from '../components/ThemeToggle';
 import '../styles/Legal.css';
 
 const Datenschutz: React.FC = () => {
@@ -13,6 +15,19 @@ const Datenschutz: React.FC = () => {
   };
   return (
     <div className="legal-page">
+      {/* Header */}
+      <header className="legal-header">
+        <div className="legal-header-content">
+          <a href="/" className="legal-home-link">
+            ← {language === 'de' ? 'Zur Startseite' : 'Back to Home'}
+          </a>
+          <div className="legal-toggles">
+            <LanguageToggle />
+            <ThemeToggle />
+          </div>
+        </div>
+      </header>
+
       <div className="legal-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

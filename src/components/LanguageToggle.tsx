@@ -14,7 +14,7 @@ const LanguageToggle: React.FC = () => {
       whileTap={{ scale: 0.95 }}
       title={language === 'de' ? 'Switch to English' : 'Zu Deutsch wechseln'}
     >
-      {language === 'de' ? 'EN' : 'DE'}
+      {language === 'de' ? 'DE' : 'EN'}
     </motion.button>
   );
 };
