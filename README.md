@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+# Henke-Net - IT-Dienstleistungen Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Eine moderne Portfolio-Seite für IT-Dienstleistungen mit React Frontend und Express Backend.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Modernes, responsives Design (Gradient, Card-Layout, Hover-Effekte)
+- Service-Übersicht mit 6 IT-Dienstleistungen
+- Fachkompetenz-Bereich (Programmierung, Cloud, DevOps)
+- Contact-Section mit direkten Kontaktmöglichkeiten
+- API Backend für zukünftige Erweiterungen
+- Local Development Setup ready
 
-### `npm start`
+## Quick Start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. Frontend starten (React)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+cd henke-net
+npm start
+```
 
-### `npm test`
+Frontend läuft dann auf: http://localhost:3000
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 2. Backend starten (Express) - in neuem Terminal
 
-### `npm run build`
+```bash
+cd henke-net/backend
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Backend läuft dann auf: http://localhost:5000
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## API Endpoints
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `GET /api/health` - Health Check des Servers
+- `GET /api/services` - Alle 6 Services abrufen
+- `POST /api/contact` - Kontakt-Formular submitten
 
-### `npm run eject`
+## Projekt-Struktur
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+henke-net/
+├── src/
+│   ├── components/
+│   │   ├── Landing.js       # Hauptkomponente mit allen Seiten
+│   │   └── Landing.css      # Modernes Styling
+│   ├── App.js               # Root-Komponente
+│   ├── App.css              # Global Styles
+│   ├── index.js
+│   └── index.css
+├── public/
+│   ├── index.html
+│   └── img/
+│       └── headerhenke-net.jpg
+├── backend/
+│   ├── server.js            # Express Server mit API Routes
+│   ├── package.json
+│   └── .env                 # Environment Variablen
+└── README.md
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologien
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Frontend**: React 19, CSS3 (Grid, Flexbox, Gradients)
+- **Backend**: Node.js, Express 4.21.2
+- **Tools**: CORS, Dotenv
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Features im Detail
 
-## Learn More
+### Landing Page
+- Header mit Navigation (sticky)
+- Intro Section mit Gradient-Hintergrund
+- Service Cards (6 Services mit Hover-Effekten)
+- About Section
+- Expertise/Skills (3 Kategorien in Grid)
+- Contact Section mit Links
+- Footer
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Design
+- Modernes Gradient: #667eea → #764ba2
+- Responsive Grid-Layout
+- Card-basiertes Design
+- Smooth Transitions & Hover-States
+- Mobile-first Responsive Design
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Nächste Schritte / TODOs
 
-### Code Splitting
+- [ ] LinkedIn URL aktualisieren
+- [ ] Contact Form mit Email-Versand konfigurieren
+- [ ] Projekt-Portfolio hinzufügen
+- [ ] Admin-Panel für Content-Verwaltung
+- [ ] Datenbankanbindung (für Kontakt-Anfragen)
+- [ ] Production Deployment (Heroku, AWS, Vercel)
+- [ ] SEO-Optimierung
+- [ ] Analytics integrieren
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Tipps
 
-### Analyzing the Bundle Size
+- Die Frontend läuft auf Port 3000 und hat einen Proxy zu Port 5000 (backend) konfiguriert
+- API-Anfragen können einfach mit `fetch('/api/...')` gemacht werden
+- Beide Services müssen laufen für volle Funktionalität
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Scripts
 
-### Making a Progressive Web App
+**Frontend:**
+- `npm start` - Development Server starten
+- `npm run build` - Production Build
+- `npm test` - Tests starten
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Backend:**
+- `npm start` - Server starten
+- `npm dev` - Development (aktuell identisch mit start)

@@ -1,0 +1,54 @@
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 999;
+}
+
+.scroll-to-top:hover {
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.5);
+  transform: translateY(-3px);
+}
+
+.scroll-to-top:active {
+  transform: translateY(0);
+}
+
+/* Light Mode */
+[data-theme="light"] .scroll-to-top {
+  background: linear-gradient(135deg, #a0263d 0%, #d63384 100%);
+  box-shadow: 0 4px 20px rgba(160, 38, 61, 0.3);
+}
+
+[data-theme="light"] .scroll-to-top:hover {
+  box-shadow: 0 8px 30px rgba(160, 38, 61, 0.5);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-to-top {
+    transition: none;
+  }
+}

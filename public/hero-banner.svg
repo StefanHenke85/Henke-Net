@@ -1,0 +1,90 @@
+<svg viewBox="0 0 1920 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Main Gradient Background -->
+    <linearGradient id="bannerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1e3a5f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b2667;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Accent Gradient -->
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.8" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="800" fill="url(#bannerGradient)"/>
+
+  <!-- Animated Background Elements - Tech Pattern -->
+  <!-- Grid Lines Left -->
+  <g stroke="url(#accentGradient)" stroke-width="1" opacity="0.15">
+    <line x1="0" y1="100" x2="400" y2="100" />
+    <line x1="0" y1="200" x2="400" y2="200" />
+    <line x1="0" y1="300" x2="400" y2="300" />
+    <line x1="0" y1="400" x2="400" y2="400" />
+    <line x1="0" y1="500" x2="400" y2="500" />
+    <line x1="0" y1="600" x2="400" y2="600" />
+    <line x1="0" y1="700" x2="400" y2="700" />
+
+    <line x1="50" y1="0" x2="50" y2="400" />
+    <line x1="100" y1="0" x2="100" y2="400" />
+    <line x1="150" y1="0" x2="150" y2="400" />
+    <line x1="200" y1="0" x2="200" y2="400" />
+    <line x1="250" y1="0" x2="250" y2="400" />
+    <line x1="300" y1="0" x2="300" y2="400" />
+    <line x1="350" y1="0" x2="350" y2="400" />
+    <line x1="400" y1="0" x2="400" y2="400" />
+  </g>
+
+  <!-- Floating Circles Right Side -->
+  <g opacity="0.1" fill="url(#accentGradient)">
+    <circle cx="1600" cy="150" r="150" />
+    <circle cx="1750" cy="400" r="120" />
+    <circle cx="1650" cy="650" r="180" />
+  </g>
+
+  <!-- Tech Nodes Network -->
+  <g stroke="url(#accentGradient)" stroke-width="1.5" opacity="0.3" fill="none">
+    <!-- Node connections -->
+    <line x1="200" y1="200" x2="400" y2="300" />
+    <line x1="400" y1="300" x2="600" y2="200" />
+    <line x1="600" y1="200" x2="800" y2="400" />
+    <line x1="400" y1="300" x2="400" y2="500" />
+
+    <!-- Nodes -->
+    <circle cx="200" cy="200" r="5" fill="url(#accentGradient)" opacity="0.6" filter="url(#glow)"/>
+    <circle cx="400" cy="300" r="5" fill="url(#accentGradient)" opacity="0.7" filter="url(#glow)"/>
+    <circle cx="600" cy="200" r="5" fill="url(#accentGradient)" opacity="0.6" filter="url(#glow)"/>
+    <circle cx="800" cy="400" r="5" fill="url(#accentGradient)" opacity="0.6" filter="url(#glow)"/>
+    <circle cx="400" cy="500" r="5" fill="url(#accentGradient)" opacity="0.5" filter="url(#glow)"/>
+  </g>
+
+  <!-- Decorative Shapes -->
+  <g opacity="0.05" stroke="url(#accentGradient)" stroke-width="2" fill="none">
+    <path d="M 1400 100 Q 1500 150, 1600 100" />
+    <path d="M 1400 700 Q 1500 650, 1600 700" />
+    <polygon points="1750,600 1800,700 1700,700" />
+    <polygon points="150,650 200,750 100,750" />
+  </g>
+
+  <!-- Center Accent Stripe -->
+  <rect x="0" y="350" width="1920" height="100" fill="url(#accentGradient)" opacity="0.05"/>
+
+  <!-- Glow Elements -->
+  <circle cx="300" cy="300" r="80" fill="none" stroke="url(#accentGradient)" stroke-width="1" opacity="0.2"/>
+  <circle cx="300" cy="300" r="60" fill="none" stroke="url(#accentGradient)" stroke-width="1" opacity="0.15"/>
+
+  <circle cx="1600" cy="400" r="100" fill="none" stroke="url(#accentGradient)" stroke-width="1" opacity="0.2"/>
+  <circle cx="1600" cy="400" r="70" fill="none" stroke="url(#accentGradient)" stroke-width="1" opacity="0.15"/>
+</svg>

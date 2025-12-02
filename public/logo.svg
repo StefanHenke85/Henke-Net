@@ -1,0 +1,45 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="url(#logoGradient)" stroke-width="2" opacity="0.3"/>
+
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main Letter H -->
+  <text x="100" y="130" font-family="Arial, sans-serif" font-size="100" font-weight="bold" text-anchor="middle" fill="url(#textGradient)">H</text>
+
+  <!-- Network Nodes Around H -->
+  <g stroke="url(#logoGradient)" stroke-width="1.5" opacity="0.6">
+    <!-- Top Left Node -->
+    <circle cx="50" cy="50" r="4" fill="url(#logoGradient)"/>
+    <line x1="70" y1="70" x2="50" y2="50" />
+
+    <!-- Top Right Node -->
+    <circle cx="150" cy="50" r="4" fill="url(#logoGradient)"/>
+    <line x1="130" y1="70" x2="150" y2="50" />
+
+    <!-- Bottom Left Node -->
+    <circle cx="50" cy="150" r="4" fill="url(#logoGradient)"/>
+    <line x1="70" y1="130" x2="50" y2="150" />
+
+    <!-- Bottom Right Node -->
+    <circle cx="150" cy="150" r="4" fill="url(#logoGradient)"/>
+    <line x1="130" y1="130" x2="150" y2="150" />
+  </g>
+
+  <!-- Connection Points to H -->
+  <circle cx="70" cy="70" r="3" fill="url(#logoGradient)" opacity="0.8"/>
+  <circle cx="130" cy="70" r="3" fill="url(#logoGradient)" opacity="0.8"/>
+  <circle cx="70" cy="130" r="3" fill="url(#logoGradient)" opacity="0.8"/>
+  <circle cx="130" cy="130" r="3" fill="url(#logoGradient)" opacity="0.8"/>
+</svg>

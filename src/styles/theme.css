@@ -1,0 +1,117 @@
+/* ========================================
+   THEME VARIABLES - DARK MODE (Default)
+   ======================================== */
+:root,
+[data-theme="dark"] {
+  /* Background Colors */
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #3b2667;
+  --bg-card: rgba(30, 41, 59, 0.8);
+  --bg-overlay: rgba(15, 23, 42, 0.8);
+
+  /* Text Colors */
+  --text-primary: #e2e8f0;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-dark: #0f172a;
+
+  /* Brand Colors */
+  --color-primary: #3b82f6;
+  --color-primary-light: #60a5fa;
+  --color-primary-lighter: #93c5fd;
+  --color-secondary: #8b5cf6;
+  --color-accent: #8b5cf6;
+
+  /* Border & Shadow */
+  --border-primary: rgba(59, 130, 246, 0.2);
+  --border-primary-light: rgba(59, 130, 246, 0.5);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 30px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.4);
+
+  /* Gradient */
+  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  --gradient-bg: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #3b2667 100%);
+}
+
+/* ========================================
+   THEME VARIABLES - LIGHT MODE
+   ======================================== */
+[data-theme="light"] {
+  /* Background Colors */
+  --bg-primary: #faf8f7;
+  --bg-secondary: #f5f0f0;
+  --bg-tertiary: #ede6e6;
+  --bg-card: rgba(250, 248, 247, 0.95);
+  --bg-overlay: rgba(250, 248, 247, 0.95);
+
+  /* Text Colors */
+  --text-primary: #3d2525;
+  --text-secondary: #5a3f3f;
+  --text-muted: #8a6565;
+  --text-dark: #2a1515;
+
+  /* Brand Colors */
+  --color-primary: #a0263d;
+  --color-primary-light: #b8374e;
+  --color-primary-lighter: #c9525e;
+  --color-secondary: #b8263d;
+  --color-accent: #c85a2d;
+
+  /* Border & Shadow */
+  --border-primary: rgba(160, 38, 61, 0.15);
+  --border-primary-light: rgba(160, 38, 61, 0.3);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 30px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
+
+  /* Gradient */
+  --gradient-primary: linear-gradient(135deg, #a0263d 0%, #b8263d 100%);
+  --gradient-bg: linear-gradient(135deg, #faf8f7 0%, #f5f0f0 50%, #ede6e6 100%);
+}
+
+/* ========================================
+   THEME TRANSITIONS
+   ======================================== */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ========================================
+   SMOOTH TRANSITIONS FOR THEME CHANGE
+   ======================================== */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Prevent transition on theme toggle itself */
+.theme-toggle,
+.theme-toggle * {
+  transition: inherit;
+}
+
+/* Accessibility: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    transition: none;
+  }
+
+  body {
+    transition: none;
+  }
+}
