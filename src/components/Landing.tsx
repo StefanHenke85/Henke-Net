@@ -211,7 +211,7 @@ const Landing: React.FC = () => {
                   y: -15,
                   rotateY: 5,
                   scale: 1.05,
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.6 }
                 }}
               >
                 <motion.div
@@ -286,7 +286,7 @@ const Landing: React.FC = () => {
                   rotateX: 8,
                   rotateY: -5,
                   scale: 1.05,
-                  transition: { duration: 0.3 }
+                  transition: { duration: 0.6 }
                 }}
                 animate={{
                   y: [0, -10, 0],
