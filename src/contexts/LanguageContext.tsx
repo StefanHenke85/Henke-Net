@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 export type Language = 'de' | 'en';
 
@@ -11,6 +11,26 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>('de');
+  const [mounted, setMounted] = useState(false);
+
+  // On mount: Check localStorage, otherwise default to German
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('language') as Language | null;
+
+    if (savedLanguage) {
+      setLanguage(savedLanguage);
+    } else {
+      setLanguage('de');
+    }
+    setMounted(true);
+  }, []);
+
+  // Save language changes to localStorage
+  useEffect(() => {
+    if (!mounted) return;
+
+    localStorage.setItem('language', language);
+  }, [language, mounted]);
 
   const toggleLanguage = () => {
     setLanguage(prev => (prev === 'de' ? 'en' : 'de'));
