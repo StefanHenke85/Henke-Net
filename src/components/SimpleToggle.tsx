@@ -19,7 +19,7 @@ const SimpleToggle: React.FC = () => {
     >
       <span className="simple-icon">💡</span>
       <span className="simple-text">
-        {language === 'simple' ? 'Simple' : 'Simple'}
+        {language === 'simple' ? 'Einfach erklärt' : 'Einfach erklärt'}
       </span>
     </button>
   );
