@@ -1,10 +1,11 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-export type Language = 'de' | 'en';
+export type Language = 'de' | 'en' | 'simple';
 
 interface LanguageContextType {
   language: Language;
   toggleLanguage: () => void;
+  setLanguage: (lang: Language) => void;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -33,11 +34,15 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   }, [language, mounted]);
 
   const toggleLanguage = () => {
-    setLanguage(prev => (prev === 'de' ? 'en' : 'de'));
+    setLanguage(prev => {
+      if (prev === 'de') return 'en';
+      if (prev === 'en') return 'de';
+      return 'de';
+    });
   };
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage }}>
+    <LanguageContext.Provider value={{ language, toggleLanguage, setLanguage }}>
       {children}
     </LanguageContext.Provider>
   );

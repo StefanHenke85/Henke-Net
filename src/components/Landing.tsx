@@ -3,6 +3,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaRocket, FaArrowDown } from
 import { motion } from 'framer-motion';
 import ThemeToggle from './ThemeToggle';
 import LanguageToggle from './LanguageToggle';
+import SimpleToggle from './SimpleToggle';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
 import './Landing.css';
@@ -127,11 +128,13 @@ const Landing: React.FC = () => {
             <a href="#contact" className="cta-button" onClick={() => setIsMobileMenuOpen(false)}>{t.nav.startProject}</a>
             <div className="mobile-toggles">
               <LanguageToggle />
+              <SimpleToggle />
               <ThemeToggle />
             </div>
           </nav>
           <div className="header-toggles">
             <LanguageToggle />
+            <SimpleToggle />
             <ThemeToggle />
           </div>
         </div>

@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../translations/translations';
 import LanguageToggle from '../components/LanguageToggle';
+import SimpleToggle from '../components/SimpleToggle';
 import ThemeToggle from '../components/ThemeToggle';
 import '../styles/Legal.css';
 
@@ -23,6 +24,7 @@ const Datenschutz: React.FC = () => {
           </a>
           <div className="legal-toggles">
             <LanguageToggle />
+            <SimpleToggle />
             <ThemeToggle />
           </div>
         </div>
