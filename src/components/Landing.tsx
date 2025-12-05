@@ -11,6 +11,7 @@ const Landing: React.FC = () => {
   const { language } = useLanguage();
   const t = translations[language];
   const [isHeaderShrunk, setIsHeaderShrunk] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,6 +89,14 @@ const Landing: React.FC = () => {
 
   return (
     <div className="landing-container">
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="mobile-menu-overlay"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
       {/* Header */}
       <header className={`header ${isHeaderShrunk ? 'shrunk' : ''}`}>
         <div className="header-content">
@@ -100,12 +109,26 @@ const Landing: React.FC = () => {
             </div>
           </div>
 
-          <nav className="navigation">
-            <a href="#services">{t.nav.services}</a>
-            <a href="#about">{t.nav.about}</a>
-            <a href="#expertise">{t.nav.expertise}</a>
-            <a href="#contact">{t.nav.contact}</a>
-            <a href="#contact" className="cta-button">{t.nav.startProject}</a>
+          {/* Mobile Menu Toggle */}
+          <button
+            type="button"
+            className="mobile-menu-toggle"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}></span>
+          </button>
+
+          <nav className={`navigation ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+            <a href="#services" onClick={() => setIsMobileMenuOpen(false)}>{t.nav.services}</a>
+            <a href="#about" onClick={() => setIsMobileMenuOpen(false)}>{t.nav.about}</a>
+            <a href="#expertise" onClick={() => setIsMobileMenuOpen(false)}>{t.nav.expertise}</a>
+            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>{t.nav.contact}</a>
+            <a href="#contact" className="cta-button" onClick={() => setIsMobileMenuOpen(false)}>{t.nav.startProject}</a>
+            <div className="mobile-toggles">
+              <LanguageToggle />
+              <ThemeToggle />
+            </div>
           </nav>
           <div className="header-toggles">
             <LanguageToggle />
